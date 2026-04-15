@@ -1,0 +1,43 @@
+# Arquivos de Build e Binários
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.hex
+*.elf
+
+# Pastas de build (geralmente geradas pelo CMake)
+build/
+bin/
+Debug/
+Release/
+
+# Arquivos de debug
+*.dSYM/
+*.su
+*.idb
+*.pdb
+*.map
+*.exp
+*.gch
+*.pch
+
+# Arquivos temporários e de editores
+*~
+*.bak
+*.swp
+.vscode/
+.vs/
+.idea/
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+semana2_variaveisC/main
