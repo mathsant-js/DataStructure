@@ -25,5 +25,16 @@ int main() {
 
     printf("%f\n", (float) numero1 + numero2);
 
+    // Operadores Relacionais
+
+    int x = 10;
+    int y = 5;
+
+    printf("%d\n", x > y);  // -> Verdadeiro (1)
+    printf("%d\n", x == y); // -> Falso (0)
+
+    int resultado = (x + y) > 10;
+    printf("%d\n", resultado); // A linguagem C não tem o tipo booleano
+
     return 0;
 }
