@@ -19,5 +19,11 @@ int main() {
     printf("Divisão inteira: %d\n", a / b);
     printf("Resto: %d\n", a % b);
 
+    // Casting de variáveis
+    int numero1 = 10;
+    int numero2 = 5;
+
+    printf("%f\n", (float) numero1 + numero2);
+
     return 0;
 }
