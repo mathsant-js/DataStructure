@@ -2,7 +2,10 @@
 
 int main() {
 
-    int opcao = 10;
+    int opcao;
+
+    printf("Escolha uma das opcoes: ");
+    scanf("%d", &opcao);
 
     switch (opcao)
     {
