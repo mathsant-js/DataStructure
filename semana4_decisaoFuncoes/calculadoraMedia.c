@@ -9,6 +9,7 @@ void menu()
     printf("====Menu====\n");
     printf("1 - Calculadora de media\n");
     printf("2 - Verificador de presenca\n");
+    printf("3 - Aprovacao\n");
 }
 
 float mediaAritmetica(float nota1, float nota2)
@@ -32,9 +33,27 @@ void verificadorPresenca(int presenca)
     }
 }
 
+void aprovacao(float media)
+{
+    if (media >= 6)
+    {
+        printf("Aprovado");
+    }
+    else if (media >= 4)
+    {
+        printf("Recuperacao");
+    }
+    else
+    {
+        printf("Reprovado");
+    }
+}
+
 int main()
 {
-    int opcao;
+    int opcao, presenca;
+    int podeAprovacao;
+    float nota1, nota2;
 
     menu();
 
@@ -55,16 +74,41 @@ int main()
 
         printf("Media: %.2f", mediaAritmetica(nota1, nota2));
 
+        podeAprovacao = 1;
+
+        menu();
+
+        printf("Escolha uma das opcoes: ");
+        scanf("%d", &opcao);
+        
         break;
     case 2:
         printf("\n--- VERIFICADOR DE PRESENCA ---\n");
-
-        int presenca;
 
         printf("Digite a presenca do aluno (0-100): ");
         scanf("%d", &presenca);
 
         verificadorPresenca(presenca);
+
+        menu();
+
+        printf("Escolha uma das opcoes: ");
+        scanf("%d", &opcao);
+
+        break;
+    case 3:
+        if (podeAprovacao == 1)
+        {
+            aprovacao(mediaAritmetica(nota1, nota2));
+        }
+        else
+        {
+            printf("Calcule a media antes\n\n");
+        }
+
+        menu();
+        printf("Escolha uma das opcoes: ");
+        scanf("%d", &opcao);
 
         break;
     default:
