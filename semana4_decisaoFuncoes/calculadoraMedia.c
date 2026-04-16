@@ -1,12 +1,21 @@
 #include <stdio.h>
 
+// Funções
+// -- Antigamente precisava colocar o void no parâmetro da função 
+// -- quando a função não possuía parâmetros
+
+void menu() {
+    printf("====Menu====\n");
+    printf("1 - Calculadora de media\n");
+    printf("2 - Verificador de presenca\n");
+}
+
 int main()
 {
     int opcao;
 
-    printf("====Menu====\n");
-    printf("1 - Calculadora de media\n");
-    printf("2 - Verificador de presenca\n");
+    menu();
+
     printf("Escolha uma das opcoes: ");
     scanf("%d", &opcao);
 
