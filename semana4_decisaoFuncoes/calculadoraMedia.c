@@ -1,13 +1,35 @@
 #include <stdio.h>
 
 // Funções
-// -- Antigamente precisava colocar o void no parâmetro da função 
+// -- Antigamente precisava colocar o void no parâmetro da função
 // -- quando a função não possuía parâmetros
 
-void menu() {
+void menu()
+{
     printf("====Menu====\n");
     printf("1 - Calculadora de media\n");
     printf("2 - Verificador de presenca\n");
+}
+
+float mediaAritmetica(float nota1, float nota2)
+{
+    return (nota1 + nota2) / 2;
+}
+
+void verificadorPresenca(int presenca)
+{
+    if (presenca > 74 && presenca < 101)
+    {
+        printf("\nAluno esta com a presenca em dia");
+    }
+    else if (presenca >= 0 && presenca < 75)
+    {
+        printf("\nAluno esta com presenca pendente");
+    }
+    else
+    {
+        printf("\nPresenca nao pode ser maior que 100 ou negativo");
+    }
 }
 
 int main()
@@ -31,9 +53,7 @@ int main()
         printf("Digite a segunda nota: ");
         scanf("%f", &nota2);
 
-        media = (nota1 + nota2) / 2;
-
-        printf("Media: %.2f", media);
+        printf("Media: %.2f", mediaAritmetica(nota1, nota2));
 
         break;
     case 2:
@@ -44,18 +64,7 @@ int main()
         printf("Digite a presenca do aluno (0-100): ");
         scanf("%d", &presenca);
 
-        if (presenca > 74 && presenca < 101)
-        {
-            printf("\nAluno esta com a presenca em dia");
-        }
-        else if (presenca >= 0 && presenca < 75)
-        {
-            printf("\nAluno esta com presenca pendente");
-        }
-        else
-        {
-            printf("\nPresenca nao pode ser maior que 100 ou negativo");
-        }
+        verificadorPresenca(presenca);
 
         break;
     default:
