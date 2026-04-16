@@ -1,4 +1,5 @@
 #include <stdio.h>
+void contar(int i);
 
 int main()
 {
@@ -35,6 +36,15 @@ int main()
         printf("Reprovado, excesso de faltas!");
     }
     
+    printf("\n");
+    contar(1);
 
     return 0;
+}
+
+void contar(int i) {
+    if (i > 5) return;
+
+    printf("%d\n", i);
+    contar(i + 1);
 }
