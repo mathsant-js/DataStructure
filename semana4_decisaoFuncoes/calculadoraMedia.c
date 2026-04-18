@@ -6,10 +6,11 @@
 
 void menu()
 {
-    printf("====Menu====\n");
+    printf("\n====Menu====\n");
     printf("1 - Calculadora de media\n");
     printf("2 - Verificador de presenca\n");
     printf("3 - Aprovacao\n");
+    printf("4 - Encerrar Programa\n");
 }
 
 float mediaAritmetica(float nota1, float nota2)
@@ -21,50 +22,42 @@ void verificadorPresenca(int presenca)
 {
     if (presenca > 74 && presenca < 101)
     {
-        printf("\nAluno esta com a presenca em dia");
+        printf("SITUACAO: Aluno esta com a presenca em dia\n");
     }
     else if (presenca >= 0 && presenca < 75)
     {
-        printf("\nAluno esta com presenca pendente");
+        printf("SITUACAO: Aluno esta com presenca pendente\n");
     }
     else
     {
-        printf("\nPresenca nao pode ser maior que 100 ou negativo");
+        printf("SITUACAO: Presenca nao pode ser maior que 100 ou negativo\n");
     }
 }
 
 void aprovacao(float media)
 {
+    printf("\n---- VERIFICACAO DE APROVACAO ----\n");
+
     if (media >= 6)
     {
-        printf("Aprovado");
+        printf("SITUACAO: Aprovado\n");
     }
     else if (media >= 4)
     {
-        printf("Recuperacao");
+        printf("SITUACAO: Recuperacao\n");
     }
     else
     {
-        printf("Reprovado");
+        printf("SITUACAO: Reprovado\n");
     }
 }
 
-int main()
+void opcoesAluno(int opcao, int presenca, int podeCalcularMedia, float nota1, float nota2, float media)
 {
-    int opcao, presenca;
-    int podeAprovacao;
-    float nota1, nota2;
-
-    menu();
-
-    printf("Escolha uma das opcoes: ");
-    scanf("%d", &opcao);
-
     switch (opcao)
     {
     case 1:
         printf("\n--- CALCULADORA MEDIA ---\n");
-        float media, nota1, nota2;
 
         printf("Digite a primeira nota: ");
         scanf("%f", &nota1);
@@ -72,15 +65,17 @@ int main()
         printf("Digite a segunda nota: ");
         scanf("%f", &nota2);
 
-        printf("Media: %.2f", mediaAritmetica(nota1, nota2));
+        media = mediaAritmetica(nota1, nota2);
 
-        podeAprovacao = 1;
+        printf("Media: %.2f\n", media);
+
+        podeCalcularMedia = 1;
 
         menu();
-
         printf("Escolha uma das opcoes: ");
         scanf("%d", &opcao);
-        
+        opcoesAluno(opcao, presenca, podeCalcularMedia, nota1, nota2, media);
+
         break;
     case 2:
         printf("\n--- VERIFICADOR DE PRESENCA ---\n");
@@ -91,29 +86,51 @@ int main()
         verificadorPresenca(presenca);
 
         menu();
-
         printf("Escolha uma das opcoes: ");
         scanf("%d", &opcao);
+        opcoesAluno(opcao, presenca, podeCalcularMedia, nota1, nota2, media);
 
         break;
     case 3:
-        if (podeAprovacao == 1)
-        {
-            aprovacao(mediaAritmetica(nota1, nota2));
-        }
-        else
-        {
+        if (podeCalcularMedia == 1) {
+            aprovacao(media);
+        } else {
             printf("Calcule a media antes\n\n");
         }
 
         menu();
         printf("Escolha uma das opcoes: ");
         scanf("%d", &opcao);
+        opcoesAluno(opcao, presenca, podeCalcularMedia, nota1, nota2, media);
 
         break;
+    case 4:
+        printf("\n---- Programa encerrado ----\n");
+        break;
     default:
-        printf("Opcao invalida");
+        printf("\n[ERRO]: Opcao invalida\n");
+
+        menu();
+        printf("Escolha uma das opcoes: ");
+        scanf("%d", &opcao);
+        opcoesAluno(opcao, presenca, podeCalcularMedia, nota1, nota2, media);
+
         break;
     }
+}
+
+int main()
+{
+    int opcao, presenca;
+    int podeCalcularMedia;
+    float nota1, nota2, media;
+
+    menu();
+
+    printf("Escolha uma das opcoes: ");
+    scanf("%d", &opcao);
+
+    opcoesAluno(opcao, presenca, podeCalcularMedia, nota1, nota2, media);
+
     return 0;
 }
