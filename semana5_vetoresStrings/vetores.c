@@ -11,7 +11,7 @@ int main() {
         scanf("%d", &valores[i]);
     }
 
-    mostrar_vetor(valores);
+    mostrar_vetor(valores);    
 
     return 0;
 }
