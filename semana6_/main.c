@@ -39,5 +39,18 @@ int main() {
     //printf("%s. %s\n", nome_2, msg);
     puts(nome_2);
     puts(msg);
+
+    int comp;
+
+    // A função strcmp compara duas strings e retorna os seguintes valores:
+    //   valor == 0 -> Strings iguais
+    //   valor > 0  -> a primeira string é maior
+    //   valor < 0  -> a segunda string é menor
+    comp = strcmp(nome_2, msg);
+    int teste = strcmp(nome_2, nome_2);
+
+    printf("Teste: %d", teste);
+    printf("A comparacao e: %d", comp);
+
     return 0;
 }
