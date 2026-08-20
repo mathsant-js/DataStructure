@@ -114,6 +114,9 @@ int main()
     exibir_situacao_aluno(aprovacao, media);
 
     /*
+
+    Usando o scanf com os inputs dos alunos
+
     printf("\n\n");
 
     aluno[1].rm = 789455;
