@@ -20,5 +20,10 @@ int main()
 
     strcpy(aluno.nome, "Matheus Santana");
 
+    printf("==== INFO ALUNO ====\n");
+    printf("RM: %d\n", aluno.rm);
+    printf("Nome: %s\n", aluno.nome);
+    printf("Nota: %f", aluno.nota);
+
     return 0;
 }
