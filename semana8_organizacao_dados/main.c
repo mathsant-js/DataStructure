@@ -12,18 +12,18 @@ struct Aluno
 int main()
 {
     // Atribuindo uma struct
-    struct Aluno aluno;
+    struct Aluno aluno[40];
 
     // Atribuindo valores aos membros da struct
-    aluno.rm = 13456;
-    aluno.nota = 9.5;
+    aluno[0].rm = 13456;
+    aluno[0].nota = 9.5;
 
-    strcpy(aluno.nome, "Matheus Santana");
+    strcpy(aluno[0].nome, "Matheus Santana");
 
     printf("==== INFO ALUNO ====\n");
-    printf("RM: %d\n", aluno.rm);
-    printf("Nome: %s\n", aluno.nome);
-    printf("Nota: %f", aluno.nota);
+    printf("RM: %d\n", aluno[0].rm);
+    printf("Nome: %s\n", aluno[0].nome);
+    printf("Nota: %f", aluno[0].nota);
 
     return 0;
 }
