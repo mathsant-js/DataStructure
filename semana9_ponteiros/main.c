@@ -27,6 +27,7 @@ int main() {
     // Exibindo dados
     printf("Nome: %s\n\n", ptr->nome);
 
+    // Aumentando o valor do ponteiro para acessar o segundo aluno
     ponteiro++;
 
     // Exibe o segundo aluno da matriz alunos
