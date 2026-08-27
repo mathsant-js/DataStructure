@@ -15,12 +15,12 @@ int main()
 
     Produto *ptr = &produto;
 
-    float porcentagem_desconto = 10;
+    float porcentagem_desconto = 1000;
 
     printf("\n==== INFO PRODUTO ====\n");
     printf("Nome: %s", ptr->nome);
     printf("\nPreco Original: R$%.2f", ptr->preco);
-    printf("\nPorcentagem de desconto: %.2f%%", porcentagem_desconto);
+    printf("\nPorcentagem de desconto: %.2f%%\n", porcentagem_desconto);
 
     aplicarDesconto(ptr, porcentagem_desconto);
 
@@ -29,7 +29,13 @@ int main()
 
 void aplicarDesconto(Produto *p, float desc)
 {
-    desc = (desc / 100) * p->preco;
+    if (desc > 100 || desc < 0) {
+        
+        printf("[ERRO] O desconto não pode ser mais do 100%% ou menos que 0%%");
+    }
+    else {
+        desc /= 100 * p->preco;
 
-    p->preco = p->preco - desc;
+        p->preco = p->preco - desc;
+    }
 }
