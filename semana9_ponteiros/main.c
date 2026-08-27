@@ -8,7 +8,12 @@ typedef struct
 } Aluno;
 
 int main() {
-    Aluno a1 = {123, "teste", 5};
+    // Testando com um aluno
+    Aluno a1 = {123, "Matheus", 5};
+
+    // Testando com dois alunos
+    Aluno alunos[2] = {{154, "Marcos", 8}, {789, "Ana", 6}};
+    Aluno* ponteiro = alunos;
 
     // Armazenando o valor em memória
     Aluno* ptr = &a1;
@@ -20,5 +25,12 @@ int main() {
     ptr->nota = 10.0;
 
     // Exibindo dados
-    printf("Nome: %s", ptr->nome);
+    printf("Nome: %s\n\n", ptr->nome);
+
+    ponteiro++;
+
+    // Exibe o segundo aluno da matriz alunos
+    printf("RM: %d\n", ponteiro->rm);
+    printf("Nome: %s\n", ponteiro->nome);
+    printf("Nota: %.2f\n", ponteiro->nota);
 }
