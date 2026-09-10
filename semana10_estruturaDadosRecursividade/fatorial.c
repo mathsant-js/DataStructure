@@ -10,6 +10,13 @@ long fatorial(int n) {
     return n * fatorial(n - 1);
 }
 
+// Função recursiva de cauda
+int fat_cauda(int n, int acc) {
+    if (n == 0) return acc;
+
+    return fat_cauda(n - 1, n * acc);
+}
+
 int main() {
     int n;
 
@@ -17,6 +24,8 @@ int main() {
     scanf("%d", &n);
 
     printf("%d! = %lld\n", n, fatorial(n));
+    printf("\n");
+    printf("%d! = %lld\n", n, fat_cauda(n, 1));
 
     return 0;
 }
