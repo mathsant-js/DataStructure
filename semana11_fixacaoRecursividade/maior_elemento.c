@@ -1,8 +1,10 @@
 #include <stdio.h>
 
 int maior(int v[], int n) {
+    // Caso Base
     if (n == 1) return v[0];
 
+    // Caso Recursivo
     int anterior = maior(v, n - 1);
 
     if (v[n - 1] > anterior) {
