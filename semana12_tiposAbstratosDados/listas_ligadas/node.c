@@ -60,11 +60,14 @@ int main() {
     printf("\n");
 
     inserirInicio(&No, 20);
+
+    // Imprimindo a lista manualmente
     printf("%d -> ", No->dado);
     printf("%d -> ", No->proximo->dado);
     printf("%d -> ", No->proximo->proximo->dado);
     printf("NULL\n");
 
+    // Função para imprimir a lista dinamicamente
     imprimirLista(No);
 
     return 0;
