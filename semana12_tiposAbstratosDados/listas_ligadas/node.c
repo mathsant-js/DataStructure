@@ -25,6 +25,17 @@ void imprimirLista(struct Node* head) {
     printf("NULL\n");
 }
 
+struct Node* buscar(struct Node* head, int alvo) {
+    struct Node* atual = head;
+
+    while (atual != NULL) {
+        if (atual->dado == alvo) return atual;
+        atual = atual->proximo;
+    }
+    
+    return NULL;
+}
+
 int main() {
     struct Node* No;
 
@@ -69,6 +80,14 @@ int main() {
 
     // Função para imprimir a lista dinamicamente
     imprimirLista(No);
+
+    inserirInicio(&No, 67);
+
+    // Buscando um valor
+    struct Node* novoNo;
+    int alvo = 67;
+    novoNo = buscar(No, alvo);
+    printf("O valor buscado -> %d,\nValor encontrado -> %d", alvo, novoNo->dado);
 
     return 0;
 }
