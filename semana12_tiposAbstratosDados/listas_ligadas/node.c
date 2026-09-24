@@ -35,13 +35,24 @@ int main() {
         exit(1);
     }
 
+    // Inserindo novo início da lista
     inserirInicio(&No, 5);
 
     // Imprimindo novo início
-    printf("%d\n", No->dado);
+    printf("%d -> ", No->dado);
 
     // Imprimindo o novo próximo
-    printf("%d\n", No->proximo->dado);
+    printf("%d -> ", No->proximo->dado);
+    
+    printf("NULL\n");
+
+    printf("\n");
+
+    inserirInicio(&No, 20);
+    printf("%d -> ", No->dado);
+    printf("%d -> ", No->proximo->dado);
+    printf("%d -> ", No->proximo->proximo->dado);
+    printf("NULL\n");
 
     return 0;
 }
