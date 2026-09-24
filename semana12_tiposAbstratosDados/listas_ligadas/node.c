@@ -14,6 +14,17 @@ void inserirInicio(struct Node** head, int valor) {
     *head = novo;
 }
 
+void imprimirLista(struct Node* head) {
+    struct Node* atual = head;
+
+    while (atual != NULL) {
+        printf("%d -> ", atual->dado);
+        atual = atual->proximo;
+    }
+
+    printf("NULL\n");
+}
+
 int main() {
     struct Node* No;
 
@@ -53,6 +64,8 @@ int main() {
     printf("%d -> ", No->proximo->dado);
     printf("%d -> ", No->proximo->proximo->dado);
     printf("NULL\n");
+
+    imprimirLista(No);
 
     return 0;
 }
