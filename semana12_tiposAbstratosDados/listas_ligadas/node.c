@@ -10,6 +10,7 @@ struct Node
 int main() {
     struct Node* No;
 
+    // Alocando apenas o espaço de memória necessário para o nó
     No = (struct Node*) malloc(sizeof(struct Node));
 
     // Antes de atribuir valor
